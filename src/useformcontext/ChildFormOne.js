@@ -5,7 +5,7 @@ function ChildFormOne() {
   const { register } = useFormContext();
   return (
     <div>
-      <div>ChildFormOne</div>
+      <div>Child Form One</div>
       <div>
         <input
           name="firstname"
