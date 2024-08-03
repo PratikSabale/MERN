@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ContextParent from "./Components/ContextApi/ContextParent";
+
+import MainApp from "./Components/MainApp";
+import Home from "./MainLayout/Home";
+import MainLayout from "./MainLayout/MainLayout";
+import MainLayoutOne from "./MainLayout/MainLayoutOne";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>{/* <MainApp/> */}</div>
+      <div>{/* <Home /> */}</div>
+      <div>{/* <MainLayout /> */}</div>
+      <div>
+        <MainLayoutOne />
+      </div>
     </div>
   );
 }
