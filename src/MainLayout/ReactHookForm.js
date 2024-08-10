@@ -6,6 +6,7 @@ import ReactHookFormOne from "../LinkedinDemos/ReactHookFormOne";
 
 function ReactHookForm() {
   const defaultValues = {
+    // sr:"",
     firstname: "",
     middlename: "",
     lastname: "",
@@ -94,6 +95,7 @@ function ReactHookForm() {
         <table>
           <thead>
             <tr>
+              <td className="border border-gray-400 px-5">Sr.No</td>
               <td className="border border-gray-400 px-5">First Name</td>
               <td className="border border-gray-400 px-5">Middle Name</td>
               <td className="border border-gray-400 px-5">Last Name</td>
@@ -106,6 +108,7 @@ function ReactHookForm() {
               ? multiple.map((item, index) => {
                   return (
                     <tr>
+                      <td>{index + 1}</td>
                       <td>{item.firstname}</td>
                       <td>{item.middlename}</td>
                       <td>{item.lastname}</td>

@@ -9,4 +9,11 @@ export const CommonButton = ({ label, type, className, onClick }) => {
     </button>
   );
 };
+
+
+// export const Submit=(()=>{
+//   return(
+   
+//   )
+// })
 // sm:w-[50%] xl:w-[100%]

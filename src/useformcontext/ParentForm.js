@@ -9,8 +9,7 @@ function ParentForm() {
     firstname: "",
     lastname: "",
 
-    education: "",
-    passingyear: "",
+    personaldetails: [{ education: "", passingyear: "", place: "" }],
 
     gender: "",
     age: "",

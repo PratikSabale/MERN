@@ -3,6 +3,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import ParentForm from "../useformcontext/ParentForm";
+import NewForm from "./NewForm";
 
 function ReactHookFormOne() {
   const defaultValues = {
@@ -68,6 +69,8 @@ function ReactHookFormOne() {
 
   const [values, setvalues] = React.useState([]);
   function onSubmitData1(data) {
+    // console.log("test :",data);
+
     let dataarray = [...values];
     dataarray.push(data);
     setvalues(dataarray);
@@ -354,6 +357,7 @@ function ReactHookFormOne() {
         </div>
       </div>
       <ParentForm />
+      <NewForm />
     </div>
   );
 }
