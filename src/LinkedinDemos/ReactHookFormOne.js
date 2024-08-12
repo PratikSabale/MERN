@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import ParentForm from "../useformcontext/ParentForm";
 import NewForm from "./NewForm";
+import { SubmitIcon } from "../commoncomponents/CommonButton";
 
 function ReactHookFormOne() {
   const defaultValues = {
@@ -275,10 +276,10 @@ function ReactHookFormOne() {
             </div>
             <div className="flex justify-start my-5 mx-7 ">
               <button
-                className="border rounded-xl text-center px-5 bg-blue-400 text-white py-1"
+                className="border rounded-xl text-center px-50 text-white py-1 text-black"
                 type="submit"
               >
-                Submit
+                <SubmitIcon /> Submit
               </button>
               <button
                 className="border rounded-xl text-center px-5 bg-red-500 text-white py-1  mx-3"

@@ -1,4 +1,5 @@
 import "./App.css";
+import ClassParent from "./class components/ClassParent";
 import ContextParent from "./Components/ContextApi/ContextParent";
 
 import MainApp from "./Components/MainApp";
@@ -15,6 +16,9 @@ function App() {
       <div>
         <MainLayoutOne />
       </div>
+      {/* <div>
+        <ClassParent />
+      </div> */}
     </div>
   );
 }

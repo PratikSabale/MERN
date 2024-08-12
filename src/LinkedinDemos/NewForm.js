@@ -47,10 +47,25 @@ function NewForm() {
   const [values, setvalues] = React.useState([]);
 
   function onSubmitData(data) {
+    console.log("Data in the form :",data);
+    
     let dataarray = [...values];
     dataarray.push(data);
     setvalues(dataarray);
   }
+
+  // onChange={(e) => {
+  //   console.log("aaaaaaa",e.target.files);
+    
+  //   let file = e.target.files[0];
+  //   const reader = new FileReader();
+  //   if (file) {
+  //     reader.onloadend = () => {
+  //       console.log("reader result is :", reader.result);
+  //     };
+  //     reader.readAsDataURL(file);
+  //   }
+  // }}
 
   return (
     <div>
@@ -74,7 +89,11 @@ function NewForm() {
           <div className="grid sm:grid-cols-2 xl:grid-cols-7">
             <fieldset className="border border-black rounded-xl m-5 py-1 px-1 text-start w-10 gap-5">
               <legend className="ml-3 px-2">Upload Photo</legend>
-              <input type="file" name="photo" {...register("photo")} />
+              <input
+                type="file"
+                name="photo"
+                {...register("photo")}
+              />
             </fieldset>
             <fieldset className="border border-black rounded-xl m-5 py-1 px-1 text-start w-10">
               <legend className="ml-3 px-2">Education</legend>
@@ -125,90 +144,98 @@ function NewForm() {
           <button type="submit">Submit</button>
         </div>
       </form>{" "}
-      <table className="my-10 mx-40 flex flex-wrap">
-        <thead>
-          <tr>
-            <td className="border border-black whitespace-nowrap px-5">
-              First name
-            </td>
-            <td className="border border-black whitespace-nowrap px-5">
-              Mobile number
-            </td>
-            <td className="border border-black whitespace-nowrap px-5">
-              Last name
-            </td>
+      <div className="overflow-x-scroll">
+        <table className="my-10 mx-40">
+          <thead>
+            <tr>
+              <td className="border border-black whitespace-nowrap px-5">
+                First name
+              </td>
 
-            <td className="border border-black whitespace-nowrap px-5">
-              Mobile Number
-            </td>
-            <td className="border border-black whitespace-nowrap px-5">
-              Email
-            </td>
-            <td className="border border-black whitespace-nowrap px-5">
-              Pan number
-            </td>
-            <td className="border border-black whitespace-nowrap px-5">
-              Aadhar number
-            </td>
-            <td className="border border-black whitespace-nowrap px-5">
-              Gender
-            </td>
-            <td className="border border-black whitespace-nowrap px-5">Age</td>
-            <td className="border border-black whitespace-nowrap px-5">
-              Photo
-            </td>
-            <td className="border border-black whitespace-nowrap px-5">
-              Education
-            </td>
-            <td className="border border-black whitespace-nowrap px-5">
-              Address
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          {values.length > 0
-            ? values.map((item, index) => {
-                return (
-                  <tr>
-                    <td className="border border-black whitespace-nowrap px-5 py-20">
-                      {item.fname}
-                    </td>
-                    <td className="border border-black whitespace-nowrap px-5">
-                      {item.middlename}
-                    </td>
-                    <td className="border border-black whitespace-nowrap px-5">
-                      {item.lname}
-                    </td>
-                    <td className="border border-black whitespace-nowrap px-5">
-                      {item.mobile}
-                    </td>
-                    <td className="border border-black whitespace-nowrap px-5">
-                      {item.email}
-                    </td>
-                    <td className="border border-black whitespace-nowrap px-5">
-                      {item.pan}
-                    </td>
-                    <td className="border border-black whitespace-nowrap px-5">
-                      {item.aadhar}
-                    </td>
-                    <td className="border border-black whitespace-nowrap px-5">
-                      {item.gender}
-                    </td>
-                    <td className="border border-black whitespace-nowrap px-5">
-                      {item.photo}
-                    </td>
-                    <td className="border border-black whitespace-nowrap px-5">
-                      {item.education}
-                    </td>
-                    <td className="border border-black whitespace-nowrap px-5">
-                      {item.address}
-                    </td>
-                  </tr>
-                );
-              })
-            : null}
-        </tbody>
-      </table>
+              <td className="border border-black whitespace-nowrap px-5">
+                Middle Name
+              </td>
+              <td className="border border-black whitespace-nowrap px-5">
+                Last name
+              </td>
+
+              <td className="border border-black whitespace-nowrap px-5">
+                Mobile Number
+              </td>
+              <td className="border border-black whitespace-nowrap px-5">
+                Email
+              </td>
+              <td className="border border-black whitespace-nowrap px-5">
+                Pan number
+              </td>
+              <td className="border border-black whitespace-nowrap px-5">
+                Aadhar number
+              </td>
+              <td className="border border-black whitespace-nowrap px-5">
+                Gender
+              </td>
+              <td className="border border-black whitespace-nowrap px-5">
+                Age
+              </td>
+              <td className="border border-black whitespace-nowrap px-5">
+                Photo
+              </td>
+              <td className="border border-black whitespace-nowrap px-5">
+                Education
+              </td>
+              <td className="border border-black whitespace-nowrap px-5">
+                Address
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            {values.length > 0
+              ? values.map((item, index) => {
+                  return (
+                    <tr>
+                      <td className="border border-black whitespace-nowrap px-5 py-20">
+                        {item.fname}
+                      </td>
+                      <td className="border border-black whitespace-nowrap px-5">
+                        {item.middlename}
+                      </td>
+                      <td className="border border-black whitespace-nowrap px-5">
+                        {item.lname}
+                      </td>
+                      <td className="border border-black whitespace-nowrap px-5">
+                        {item.mobile}
+                      </td>
+                      <td className="border border-black whitespace-nowrap px-5">
+                        {item.email}
+                      </td>
+                      <td className="border border-black whitespace-nowrap px-5">
+                        {item.pan}
+                      </td>
+                      <td className="border border-black whitespace-nowrap px-5">
+                        {item.aadhar}
+                      </td>
+                      <td className="border border-black whitespace-nowrap px-5">
+                        {item.gender}
+                      </td>
+                      <td className="border border-black whitespace-nowrap px-5">
+                        {item.age}
+                      </td>
+                      <td className="border border-black whitespace-nowrap px-5">
+                        {item.photo}
+                      </td>
+                      <td className="border border-black whitespace-nowrap px-5">
+                        {item.education}
+                      </td>
+                      <td className="border border-black whitespace-nowrap px-5">
+                        {item.address}
+                      </td>
+                    </tr>
+                  );
+                })
+              : null}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
