@@ -1,243 +1,186 @@
-import { yupResolver } from "@hookform/resolvers/yup";
 import React from "react";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
+import {
+  AddressIcon,
+  EmailIdIcon,
+  FemaleIcon,
+  MaleIcon,
+  MobileIcon,
+  UploadIcon,
+} from "../commonassets/CommonAssets";
 
 function NewForm() {
   const defaultValues = {
-    fname: "",
+    firstname: "",
     middlename: "",
-    lname: "",
-    mobile: "",
-    email: "",
-    pan: "",
-    aadhar: "",
+    lastname: "",
+    month: "",
+    day: "",
+    year: "",
     gender: "",
-    age: "",
-    photo: "",
-    education: "",
-    address: "",
+    country: "",
+    phone: "",
+    email: "",
+    city: "",
+    state: "",
+    pin: "",
   };
-
-  const errorObject = yup.object().shape({
-    fname: yup.string().required(),
-    middlename: yup.string().required(),
-    lname: yup.string().required(),
-    mobile: yup.string().required(),
-    email: yup.string().required(),
-    pan: yup.string().required(),
-    aadhar: yup.string().required(),
-    gender: yup.string().required(),
-    age: yup.string().required(),
-    photo: yup.string().required(),
-    education: yup.string().required(),
-    address: yup.string().required(),
-  });
-
-  const {
-    handleSubmit,
-    register,
-    formState: { error },
-  } = useForm({
-    defaultValues: defaultValues,
-    resolver: yupResolver(errorObject),
-    mode: "onChange",
-  });
-
-  const [values, setvalues] = React.useState([]);
-
-  function onSubmitData(data) {
-    console.log("Data in the form :",data);
-    
-    let dataarray = [...values];
-    dataarray.push(data);
-    setvalues(dataarray);
-  }
-
-  // onChange={(e) => {
-  //   console.log("aaaaaaa",e.target.files);
-    
-  //   let file = e.target.files[0];
-  //   const reader = new FileReader();
-  //   if (file) {
-  //     reader.onloadend = () => {
-  //       console.log("reader result is :", reader.result);
-  //     };
-  //     reader.readAsDataURL(file);
-  //   }
-  // }}
 
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmitData)}>
-        <div className="border border-black mx-20 flex flex-wrap  ">
-          <div className="grid sm:grid-cols-3  md:grid-cols-3 xl:grid-cols-7">
-            <fieldset className="border border-black rounded-xl m-5 py-1 px-1 text-start w-10">
-              <legend className="ml-3 px-2">First Name</legend>
-              <input name="fname" {...register("fname")} />
+      <div className="text-start mx-10 my-10">
+        <h1 className=" text-5xl font-bold mb-2">Registration Form</h1>
+        <p className="text-xl">
+          Please fill out the form below to complete your registration.
+        </p>
+      </div>
+      <form>
+        <div className="text-start mx-10 my-10">
+          <div className="my-3 mx-2">
+            <label className="text-2xl ">Name</label>
+          </div>
+          <div className="grid sm:grid-cols-3 xl:grid-cols-7 gap-5 mx-10">
+            <fieldset className="border border-black rounded-3xl text-start">
+              <legend className="mx-5 px-2">First Name</legend>
+              <input name="firstname" className=" border-none mx-5 mb-1 " />
             </fieldset>
-            <fieldset className="border border-black rounded-xl m-5 py-1 px-1 text-start w-10">
-              <legend className="ml-3 px-2">Middle Name</legend>
-              <input name="middlename" {...register("middlename")} />
+
+            <fieldset className="border border-black rounded-3xl text-start">
+              <legend className="mx-5 px-2">Middle Name</legend>
+              <input name="middlename" className="mx-5 mb-1 border-none" />
             </fieldset>
-            <fieldset className="border border-black rounded-xl m-5 py-1 px-1 text-start w-10">
-              <legend className="ml-3 px-2">Last Name</legend>
-              <input name="lname" {...register("lname")} />
+
+            <fieldset className="border border-black rounded-3xl text-start">
+              <legend className="mx-5 px-2">Last Name</legend>
+              <input name="lastname" className="mx-5 mb-1 border-none" />
             </fieldset>
           </div>
 
-          <div className="grid sm:grid-cols-2 xl:grid-cols-7">
-            <fieldset className="border border-black rounded-xl m-5 py-1 px-1 text-start w-10 gap-5">
-              <legend className="ml-3 px-2">Upload Photo</legend>
+          <div className="mb-3  mt-5 mx-2">
+            <label className="text-2xl">Birth Date</label>
+          </div>
+          <div className="grid sm:grid-cols-3 xl:grid-cols-7 gap-5 mx-10">
+            <fieldset className="border border-black rounded-3xl text-start">
+              <legend className="mx-5 px-2">Date</legend>
               <input
-                type="file"
-                name="photo"
-                {...register("photo")}
+                type="date"
+                name="day"
+                className="mx-10 mb-1 border-none"
               />
             </fieldset>
-            <fieldset className="border border-black rounded-xl m-5 py-1 px-1 text-start w-10">
-              <legend className="ml-3 px-2">Education</legend>
-              <input name="education" {...register("education")} />
+          </div>
+
+          <div className="mb-3  mt-5 mx-2">
+            <label className="text-2xl">Gender</label>
+          </div>
+          <div className="grid sm:grid-cols-2 xl:grid-cols-7 mx-10">
+            <div className="grid">
+              <div className="flex mb-5">
+                <input type="radio" name="gender" value="male" />
+                <MaleIcon />
+              </div>
+              <div className="flex">
+                <input type="radio" name="gender" value="female" />
+                <FemaleIcon />
+              </div>
+            </div>
+            <div>
+              <div className="flex">
+                <p>Of which country are you a citizen</p>
+              </div>
+              <div>
+                <fieldset className="border border-black rounded-3xl text-start">
+                  <legend className="mx-5 px-2">Country</legend>
+                  <select name="day" className="mx-10 mb-1 border-none">
+                    <option value="#">---------</option>
+                    <option value="us">United States</option>
+                    <option value="china">China</option>
+                    <option value="india">India</option>
+                    <option value="japan">Japan</option>
+                    <option value="germany">Germany</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="france">France</option>
+                    <option value="brazil">Brazil</option>
+                    <option value="canada">Canada</option>
+                    <option value="russia">Russia</option>
+                  </select>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-3 xl:grid-cols-7 my-10 gap-5">
+            <div className="grid">
+              <div className=" flex mb-3  mt-5 mx-2">
+                <label className="text-2xl ">Phone</label>
+                <MobileIcon />
+              </div>
+              <div className="mx-10">
+                <fieldset className="border border-black rounded-3xl text-start">
+                  <legend className="mx-5 px-2">Phone</legend>
+                  <input name="phone" className="mx-5 mb-1 border-none" />
+                </fieldset>
+              </div>
+            </div>
+            <div className="grid mx-8">
+              <div className="mb-3  mt-5 flex  ">
+                <label className="text-2xl ">Email Address</label>
+                <EmailIdIcon />
+              </div>
+              <div>
+                <fieldset className="border border-black rounded-3xl text-start">
+                  <legend className="mx-5 px-2">Email</legend>
+                  <input name="email" className="mx-5 mb-1 border-none px-20" />
+                </fieldset>
+              </div>
+            </div>
+          </div>
+
+          <div className="my-3 mx-2">
+            <label className="text-2xl ">Address</label>
+          </div>
+          <div className="grid sm:grid-cols-3 xl:grid-cols-7 gap-5 mx-10">
+            <fieldset className="border border-black rounded-3xl text-start">
+              <legend className="mx-5 px-2">City</legend>
+              <input name="city" className="mx-5 mb-1 border-none" />
+            </fieldset>
+
+            <fieldset className="border border-black rounded-3xl text-start">
+              <legend className="mx-5 px-2">State</legend>
+              <input name="state" className="mx-5 mb-1 border-none" />
+            </fieldset>
+
+            <fieldset className="border border-black rounded-3xl text-start">
+              <legend className="mx-5 px-2">Pin</legend>
+              <input name="pin" className="mx-5 mb-1 border-none" />
             </fieldset>
           </div>
 
-          <div className="grid sm:grid-cols-2 xl:grid-cols-7">
-            <fieldset className="border border-black rounded-xl m-5 py-1 px-1 text-start w-10">
-              <legend className="ml-3 px-2">Mobile Number</legend>
-              <input name="mobile" {...register("mobile")} />
-            </fieldset>
-            <fieldset className="border border-black rounded-xl m-5 py-1 px-1 text-start w-10">
-              <legend className="ml-3 px-2">Email</legend>
-              <input name="email" {...register("email")} />
-            </fieldset>
+          <div className="grid sm:grid-cols-1 xl:grid-cols-3 my-10 gap-5 ">
+            <div className="border border-black border-dashed bg-gray-100 py-5">
+              <div className=" mx-[47%] ">
+                <UploadIcon />
+              </div>
+              <p className="text-center">Upload Your File</p>
+              <p className="text-center px-10">
+                Support file type(s): PDF, DOC, JPG
+              </p>
+              <p className="text-center px-15 whitespace-nowrap">
+                Size limit: 10MB per file, up to 10 file(s), with total file
+                size not exceeding 50.00 MB
+              </p>
+              <div className="py-2 mx-[42%] ">
+                <button
+                  type="button"
+                  className="border border-black whitespace-nowrap px-3"
+                >
+                  Browse File
+                </button>
+              </div>
+            </div>
           </div>
-
-          <div className="grid sm:grid-cols-2 xl:grid-cols-7">
-            <fieldset className="border border-black rounded-xl m-5 py-1 px-1 text-start w-10">
-              <legend className="ml-3 px-2">Pan Number</legend>
-              <input name="pan" {...register("pan")} />
-            </fieldset>
-            <fieldset className="border border-black rounded-xl m-5 py-1 px-1 text-start w-10">
-              <legend className="ml-3 px-2">Aadhar Number</legend>
-              <input name="aadhar" {...register("aadhar")} />
-            </fieldset>
-          </div>
-
-          <div className="grid sm:grid-cols-2 xl:grid-cols-7">
-            <fieldset className="border border-black rounded-xl m-5 py-1 px-1 text-start w-10">
-              <legend className="ml-3 px-2">Gender</legend>
-              <input name="gender" {...register("gender")} />
-            </fieldset>
-            <fieldset className="border border-black rounded-xl m-5 py-1 px-1 text-start w-10">
-              <legend className="ml-3 px-2">Age</legend>
-              <input name="age" {...register("age")} />
-            </fieldset>
-          </div>
-
-          <div>
-            <fieldset className="border border-black rounded-xl m-5 py-1 px-1 text-start w-10">
-              <legend className="ml-3 px-2">Address</legend>
-              <input name="address" {...register("address")} />
-            </fieldset>
-          </div>
-
-          <button type="submit">Submit</button>
         </div>
-      </form>{" "}
-      <div className="overflow-x-scroll">
-        <table className="my-10 mx-40">
-          <thead>
-            <tr>
-              <td className="border border-black whitespace-nowrap px-5">
-                First name
-              </td>
-
-              <td className="border border-black whitespace-nowrap px-5">
-                Middle Name
-              </td>
-              <td className="border border-black whitespace-nowrap px-5">
-                Last name
-              </td>
-
-              <td className="border border-black whitespace-nowrap px-5">
-                Mobile Number
-              </td>
-              <td className="border border-black whitespace-nowrap px-5">
-                Email
-              </td>
-              <td className="border border-black whitespace-nowrap px-5">
-                Pan number
-              </td>
-              <td className="border border-black whitespace-nowrap px-5">
-                Aadhar number
-              </td>
-              <td className="border border-black whitespace-nowrap px-5">
-                Gender
-              </td>
-              <td className="border border-black whitespace-nowrap px-5">
-                Age
-              </td>
-              <td className="border border-black whitespace-nowrap px-5">
-                Photo
-              </td>
-              <td className="border border-black whitespace-nowrap px-5">
-                Education
-              </td>
-              <td className="border border-black whitespace-nowrap px-5">
-                Address
-              </td>
-            </tr>
-          </thead>
-          <tbody>
-            {values.length > 0
-              ? values.map((item, index) => {
-                  return (
-                    <tr>
-                      <td className="border border-black whitespace-nowrap px-5 py-20">
-                        {item.fname}
-                      </td>
-                      <td className="border border-black whitespace-nowrap px-5">
-                        {item.middlename}
-                      </td>
-                      <td className="border border-black whitespace-nowrap px-5">
-                        {item.lname}
-                      </td>
-                      <td className="border border-black whitespace-nowrap px-5">
-                        {item.mobile}
-                      </td>
-                      <td className="border border-black whitespace-nowrap px-5">
-                        {item.email}
-                      </td>
-                      <td className="border border-black whitespace-nowrap px-5">
-                        {item.pan}
-                      </td>
-                      <td className="border border-black whitespace-nowrap px-5">
-                        {item.aadhar}
-                      </td>
-                      <td className="border border-black whitespace-nowrap px-5">
-                        {item.gender}
-                      </td>
-                      <td className="border border-black whitespace-nowrap px-5">
-                        {item.age}
-                      </td>
-                      <td className="border border-black whitespace-nowrap px-5">
-                        {item.photo}
-                      </td>
-                      <td className="border border-black whitespace-nowrap px-5">
-                        {item.education}
-                      </td>
-                      <td className="border border-black whitespace-nowrap px-5">
-                        {item.address}
-                      </td>
-                    </tr>
-                  );
-                })
-              : null}
-          </tbody>
-        </table>
-      </div>
+      </form>
     </div>
   );
 }
-
 export default NewForm;

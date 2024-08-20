@@ -3,6 +3,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import ChildFormOne from "./ChildFormOne";
 import ChildFormTwo from "./ChildFormTwo";
 import ChildFormThree from "./ChildFormThree";
+import NewForm from "../LinkedinDemos/NewForm";
 
 function ParentForm() {
   const defaultValues = {
@@ -32,6 +33,7 @@ function ParentForm() {
           <ChildFormOne />
           <ChildFormTwo />
           <ChildFormThree />
+          <NewForm />
           <button type="submit">Submit</button>
         </form>
       </FormProvider>

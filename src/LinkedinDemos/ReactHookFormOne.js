@@ -3,8 +3,16 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import ParentForm from "../useformcontext/ParentForm";
-import NewForm from "./NewForm";
-import { SubmitIcon } from "../commoncomponents/CommonButton";
+
+import {
+  AddressIcon,
+  EducationIcon,
+  EmailIcon,
+  FemaleIcon,
+  MaleIcon,
+  MobileIcon,
+  SubmitIcon,
+} from "../commonassets/CommonAssets";
 
 function ReactHookFormOne() {
   const defaultValues = {
@@ -78,9 +86,9 @@ function ReactHookFormOne() {
   }
   return (
     <div>
-      <div className="grid grid-cols-2 my-5 ">
+      <div className="grid grid-cols-2 my-5  ">
         <form onSubmit={handleSubmit(onSubmitData1)}>
-          <div className="border  ml-10 mr-[10%] bg-blue-100">
+          <div className="border  ml-10 mr-[10%] bg-blue-100 border border-dashed border-black">
             <div className="flex justify-start my-5 mx-5">
               <div>
                 <select className=" border rounded-xl mx-2" name="prefix">
@@ -121,21 +129,32 @@ function ReactHookFormOne() {
 
             <div className="flex justify-start mx-5  my-5">
               <div>
-                <input
-                  className="border rounded-xl text-center mx-2"
-                  name="mobile"
-                  {...register("mobile")}
-                  placeholder="Mobile"
-                />
-                <div>{errors?.mobile?.message}</div>
+                {" "}
+                <MobileIcon />
               </div>
               <div>
                 <input
                   className="border rounded-xl text-center mx-2"
-                  name="email"
-                  {...register("email")}
-                  placeholder="Email"
+                  name="mobile"
+                  {...register("mobile")}
                 />
+                <div>{errors?.mobile?.message}</div>
+              </div>
+              <div className="flex">
+                <div>
+                  {" "}
+                  <EmailIcon />
+                </div>
+                <div>
+                  {" "}
+                  <input
+                    className="border rounded-xl text-center mx-2"
+                    name="email"
+                    {...register("email")}
+                    placeholder="Email"
+                  />
+                </div>
+
                 <div>{errors.email?.message}</div>
               </div>
             </div>
@@ -149,7 +168,7 @@ function ReactHookFormOne() {
                   type="radio"
                   {...register("gender")}
                 />
-                Male
+                <MaleIcon />
                 <input
                   className="border rounded-xl text-center mx-2"
                   name="gender"
@@ -157,7 +176,7 @@ function ReactHookFormOne() {
                   type="radio"
                   {...register("gender")}
                 />
-                Female
+                <FemaleIcon />
                 <div>{errors?.gender?.message}</div>
               </div>
               <div>
@@ -251,6 +270,9 @@ function ReactHookFormOne() {
 
             <div className=" flex justify-start mx-5">
               <div>
+                <EducationIcon />
+              </div>
+              <div>
                 <select
                   className=" border rounded-xl mx-2 px-5"
                   name="education"
@@ -263,20 +285,24 @@ function ReactHookFormOne() {
 
                 <div>{errors?.education?.message}</div>
               </div>
-              <div>
-                {" "}
-                <input
-                  className="border rounded-xl text-center mx-2"
-                  name="address"
-                  {...register("address")}
-                  placeholder="Address"
-                />
-                <div>{errors?.address?.message}</div>
+              <div className="flex">
+                <div>
+                  <AddressIcon />
+                </div>
+                <div>
+                  <input
+                    className="border rounded-xl text-center mx-2"
+                    name="address"
+                    {...register("address")}
+                    placeholder="Address"
+                  />
+                  <div>{errors?.address?.message}</div>
+                </div>
               </div>
             </div>
             <div className="flex justify-start my-5 mx-7 ">
               <button
-                className="border rounded-xl text-center px-50 text-white py-1 text-black"
+                className="border rounded-xl text-center px-50  text-black"
                 type="submit"
               >
                 <SubmitIcon /> Submit
@@ -358,7 +384,6 @@ function ReactHookFormOne() {
         </div>
       </div>
       <ParentForm />
-      <NewForm />
     </div>
   );
 }

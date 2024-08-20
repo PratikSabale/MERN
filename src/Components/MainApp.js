@@ -84,7 +84,7 @@ function MainApp() {
           label="LinkedIn Demos"
           type="button"
           onClick={() => {
-            navigate("/reacthookformone");
+            navigate("/linkedinhome");
           }}
         />
       </div>

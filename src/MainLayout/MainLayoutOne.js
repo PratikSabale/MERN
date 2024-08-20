@@ -17,6 +17,8 @@ import ErrorPage from "./ErrorPage";
 import ReactForm from "./ReactForm";
 import ReactHookForm from "./ReactHookForm";
 import ReactHookFormOne from "../LinkedinDemos/ReactHookFormOne";
+import NewForm from "../LinkedinDemos/NewForm";
+import LinkedinHome from "../LinkedinDemos/LinkedinHome";
 
 function MainLayoutOne() {
   return (
@@ -39,7 +41,9 @@ function MainLayoutOne() {
           <Route path="/mainlayout" element={<MainLayout />} />
           <Route path="/reactform" element={<ReactForm />} />
           <Route path="/reacthookform" element={<ReactHookForm />} />
+          <Route path="/linkedinhome" element={<LinkedinHome />} />
           <Route path="/reacthookformone" element={<ReactHookFormOne />} />
+          <Route path="newform" element={<NewForm />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
