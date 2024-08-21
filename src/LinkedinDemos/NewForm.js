@@ -41,17 +41,26 @@ function NewForm() {
           <div className="grid sm:grid-cols-3 xl:grid-cols-7 gap-5 mx-10">
             <fieldset className="border border-black rounded-3xl text-start">
               <legend className="mx-5 px-2">First Name</legend>
-              <input name="firstname" className=" border-none mx-5 mb-1 " />
+              <input
+                name="firstname"
+                className=" border-none mx-5 mb-1 outline-none"
+              />
             </fieldset>
 
             <fieldset className="border border-black rounded-3xl text-start">
               <legend className="mx-5 px-2">Middle Name</legend>
-              <input name="middlename" className="mx-5 mb-1 border-none" />
+              <input
+                name="middlename"
+                className="mx-5 mb-1 border-none outline-none"
+              />
             </fieldset>
 
             <fieldset className="border border-black rounded-3xl text-start">
               <legend className="mx-5 px-2">Last Name</legend>
-              <input name="lastname" className="mx-5 mb-1 border-none" />
+              <input
+                name="lastname"
+                className="mx-5 mb-1 border-none outline-none"
+              />
             </fieldset>
           </div>
 
@@ -64,7 +73,7 @@ function NewForm() {
               <input
                 type="date"
                 name="day"
-                className="mx-10 mb-1 border-none"
+                className="mx-10 mb-1 border-none outline-none"
               />
             </fieldset>
           </div>
@@ -90,7 +99,10 @@ function NewForm() {
               <div>
                 <fieldset className="border border-black rounded-3xl text-start">
                   <legend className="mx-5 px-2">Country</legend>
-                  <select name="day" className="mx-10 mb-1 border-none">
+                  <select
+                    name="day"
+                    className="mx-10 mb-1 border-none outline-none"
+                  >
                     <option value="#">---------</option>
                     <option value="us">United States</option>
                     <option value="china">China</option>
@@ -117,7 +129,10 @@ function NewForm() {
               <div className="mx-10">
                 <fieldset className="border border-black rounded-3xl text-start">
                   <legend className="mx-5 px-2">Phone</legend>
-                  <input name="phone" className="mx-5 mb-1 border-none" />
+                  <input
+                    name="phone"
+                    className="mx-5 mb-1 border-none outline-none"
+                  />
                 </fieldset>
               </div>
             </div>
@@ -129,7 +144,10 @@ function NewForm() {
               <div>
                 <fieldset className="border border-black rounded-3xl text-start">
                   <legend className="mx-5 px-2">Email</legend>
-                  <input name="email" className="mx-5 mb-1 border-none px-20" />
+                  <input
+                    name="email"
+                    className="mx-5 mb-1 border-none px-20 outline-none"
+                  />
                 </fieldset>
               </div>
             </div>
@@ -141,17 +159,26 @@ function NewForm() {
           <div className="grid sm:grid-cols-3 xl:grid-cols-7 gap-5 mx-10">
             <fieldset className="border border-black rounded-3xl text-start">
               <legend className="mx-5 px-2">City</legend>
-              <input name="city" className="mx-5 mb-1 border-none" />
+              <input
+                name="city"
+                className="mx-5 mb-1 focus:border-none outline-none"
+              />
             </fieldset>
 
             <fieldset className="border border-black rounded-3xl text-start">
               <legend className="mx-5 px-2">State</legend>
-              <input name="state" className="mx-5 mb-1 border-none" />
+              <input
+                name="state"
+                className="mx-5 mb-1 border-none outline-none"
+              />
             </fieldset>
 
             <fieldset className="border border-black rounded-3xl text-start">
               <legend className="mx-5 px-2">Pin</legend>
-              <input name="pin" className="mx-5 mb-1 border-none" />
+              <input
+                name="pin"
+                className="mx-5 mb-1 border-none outline-none"
+              />
             </fieldset>
           </div>
 
@@ -172,6 +199,7 @@ function NewForm() {
                 <button
                   type="button"
                   className="border border-black whitespace-nowrap px-3"
+                  onClick={() => {}}
                 >
                   Browse File
                 </button>
