@@ -19,11 +19,20 @@ import ReactHookForm from "./ReactHookForm";
 import ReactHookFormOne from "../LinkedinDemos/ReactHookFormOne";
 import NewForm from "../LinkedinDemos/NewForm";
 import LinkedinHome from "../LinkedinDemos/LinkedinHome";
+import StructureDemo from "../LinkedinDemos/StructureDemo";
+import FinalForm from "../LinkedinDemos/FinalForm";
+import PageOne from "../Redux/PageOne";
+import PageTwo from "../Redux/PageTwo";
+import PageThree from "../Redux/PageThree";
+import ReduxHome from "../Redux/ReduxHome";
+import FormDatabase from "../LinkedinDemos/FormDatabase";
+import ParentFormData from "../LinkedinDemos/ParentFormData";
+import ChildFormStructure from "../LinkedinDemos/ChildFormStructure";
+import ContextFormParent from "../ContextForm/ContextFormParent";
 
 function MainLayoutOne() {
   return (
     <div>
-      {/* <div>MainLayoutOne</div> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainApp />} />
@@ -44,6 +53,17 @@ function MainLayoutOne() {
           <Route path="/linkedinhome" element={<LinkedinHome />} />
           <Route path="/reacthookformone" element={<ReactHookFormOne />} />
           <Route path="newform" element={<NewForm />} />
+          <Route path="/structuredemo" element={<StructureDemo />} />
+          <Route path="/finalform" element={<FinalForm />} />
+          <Route path="/reduxhome" element={<ReduxHome />} />
+          <Route path="/pageone" element={<PageOne />} />
+          <Route path="/pagetwo" element={<PageTwo />} />
+          <Route path="/pagethree" element={<PageThree />} />
+          <Route path="/formdatabase" element={<FormDatabase />} />
+          {/* <Route path="/formdatabase" element={<ContextFormParent />} /> */}
+          <Route path="/parentformdata" element={<ParentFormData />} />
+          <Route path="/childformstructure" element={<ChildFormStructure />} />
+          <Route path="childformdatatable" el />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>

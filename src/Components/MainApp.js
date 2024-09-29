@@ -87,6 +87,14 @@ function MainApp() {
             navigate("/linkedinhome");
           }}
         />
+
+        <CommonButton
+          label="Redux"
+          type="button"
+          onClick={() => {
+            navigate("/reduxhome");
+          }}
+        />
       </div>
 
       <div

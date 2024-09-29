@@ -122,7 +122,7 @@ function NewForm() {
 
           <div className="grid sm:grid-cols-3 xl:grid-cols-7 my-10 gap-5">
             <div className="grid">
-              <div className=" flex mb-3  mt-5 mx-2">
+              <div className=" flex mb-3  mt-5 mx-2 gap-2">
                 <label className="text-2xl ">Phone</label>
                 <MobileIcon />
               </div>

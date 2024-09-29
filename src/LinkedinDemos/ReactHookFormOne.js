@@ -31,7 +31,7 @@ function ReactHookFormOne() {
   };
 
   const errorObject = yup.object().shape({
-    prefix: yup.object().nullable().required(),
+    prefix: yup.string().required(),
     firstname: yup
       .string()
       .required("Enter First Name")
@@ -63,7 +63,7 @@ function ReactHookFormOne() {
         /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/,
         "Please Enter Valid PAN NUMBER"
       ),
-    eduction: yup.object().nullable().required(),
+    education: yup.string().required(),
   });
 
   const {
@@ -76,6 +76,7 @@ function ReactHookFormOne() {
     mode: "onChange",
   });
 
+  console.log("THE ERRORS in the component :", errors);
   const [values, setvalues] = React.useState([]);
   function onSubmitData1(data) {
     // console.log("test :",data);
@@ -88,10 +89,14 @@ function ReactHookFormOne() {
     <div>
       <div className="grid grid-cols-2 my-5  ">
         <form onSubmit={handleSubmit(onSubmitData1)}>
-          <div className="border  ml-10 mr-[10%] bg-blue-100 border border-dashed border-black">
+          <div className="border  ml-10 mr-[10%] bg-blue-100  border-dashed border-black">
             <div className="flex justify-start my-5 mx-5">
               <div>
-                <select className=" border rounded-xl mx-2" name="prefix">
+                <select
+                  className=" border rounded-xl mx-2"
+                  {...register("prefix")}
+                  name="prefix"
+                >
                   <option value="mr">Mr</option>
                   <option value="miss">Miss</option>
                   <option value="mrs">Mrs</option>
@@ -370,7 +375,7 @@ function ReactHookFormOne() {
                           {item.aadhar}
                         </td>
                         <td className="border border-gray-400 px-3">
-                          {item.eduction}
+                          {item.education}
                         </td>
                         <td className="border border-gray-400 px-3">
                           {item.address}

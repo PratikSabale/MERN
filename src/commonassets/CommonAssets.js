@@ -38,8 +38,8 @@ export const SubmitIcon = () => {
 export const MaleIcon = () => {
   return (
     <svg
-      width="55px"
-      height="55px"
+      width="40px"
+      height="40px"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -70,8 +70,8 @@ export const MaleIcon = () => {
 export const FemaleIcon = () => {
   return (
     <svg
-      height="55px"
-      width="55px"
+      height="40px"
+      width="40px"
       version="1.1"
       id="_x32_"
       xmlns="http://www.w3.org/2000/svg"
@@ -102,8 +102,8 @@ export const FemaleIcon = () => {
 export const MobileIcon = () => {
   return (
     <svg
-      width="40px"
-      height="40x"
+      width="30px"
+      height="30px"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -119,8 +119,8 @@ export const MobileIcon = () => {
 export const EmailIcon = () => {
   return (
     <svg
-      height="40px"
-      width="40px"
+      height="20px"
+      width="20px"
       version="1.1"
       id="_x34_"
       xmlns="http://www.w3.org/2000/svg"
@@ -289,8 +289,8 @@ export const EmailIdIcon = () => {
   return (
     <svg
       fill="#000000"
-      height="40px"
-      width="40px"
+      height="30px"
+      width="30px"
       version="1.1"
       id="Icons"
       xmlns="http://www.w3.org/2000/svg"
@@ -322,6 +322,82 @@ export const UploadIcon = () => {
     >
       <title>upload1</title>
       <path d="M29.426 15.535c0 0 0.649-8.743-7.361-9.74-6.865-0.701-8.955 5.679-8.955 5.679s-2.067-1.988-4.872-0.364c-2.511 1.55-2.067 4.388-2.067 4.388s-5.576 1.084-5.576 6.768c0.124 5.677 6.054 5.734 6.054 5.734h9.351v-6h-3l5-5 5 5h-3v6h8.467c0 0 5.52 0.006 6.295-5.395 0.369-5.906-5.336-7.070-5.336-7.070z"></path>
+    </svg>
+  );
+};
+
+export const ProfileIcon = () => {
+  return (
+    <svg
+      width="140px"
+      height="140px"
+      viewBox="0 0 8.4666669 8.4666669"
+      id="svg8"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      cc="http://creativecommons.org/ns#"
+      dc="http://purl.org/dc/elements/1.1/"
+      inkscape="http://www.inkscape.org/namespaces/inkscape"
+      rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+      svg="http://www.w3.org/2000/svg"
+    >
+      <defs id="defs2" />
+
+      <g id="layer1" transform="translate(0,-288.53332)">
+        <path
+          d="M 10.462891 16.070312 C 4.9244824 18.277775 0.99608795 23.682844 0.99609375 30 A 1.0001 1.0001 0 0 0 2 31.003906 L 30 31.003906 A 1.0001 1.0001 0 0 0 30.996094 30 C 30.996099 23.68349 27.06876 18.278206 21.53125 16.070312 C 19.99994 17.27111 18.07881 17.996094 15.996094 17.996094 C 13.912967 17.996094 11.992832 17.271538 10.462891 16.070312 z "
+          id="path935"
+          transform="matrix(0.26458333,0,0,0.26458333,0,288.53332)"
+        />
+
+        <path
+          d="M 15.996094 1.0039062 C 11.589664 1.0039062 8.0019573 4.5916469 8.0019531 8.9980469 C 8.0019573 13.404485 11.589664 17 15.996094 17 C 20.402524 17 23.998043 13.404485 23.998047 8.9980469 C 23.998043 4.5916469 20.402524 1.0039062 15.996094 1.0039062 z "
+          id="path940"
+          transform="matrix(0.26458333,0,0,0.26458333,0,288.53332)"
+        />
+      </g>
+    </svg>
+  );
+};
+
+export const ViewIcon = () => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 5C7 5 2.73 8.11 1 12.5C2.73 16.89 7 20 12 20C17 20 21.27 16.89 23 12.5C21.27 8.11 17 5 12 5ZM12 17.5C9.24 17.5 7 15.26 7 12.5C7 9.74 9.24 7.5 12 7.5C14.76 7.5 17 9.74 17 12.5C17 15.26 14.76 17.5 12 17.5ZM12 9.5C10.34 9.5 9 10.84 9 12.5C9 14.16 10.34 15.5 12 15.5C13.66 15.5 15 14.16 15 12.5C15 10.84 13.66 9.5 12 9.5Z"
+        fill="#007EA9"
+      />
+    </svg>
+  );
+};
+
+export const CloseIcon = () => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_9735_3392)">
+        <path
+          d="M14.59 8L12 10.59L9.41 8L8 9.41L10.59 12L8 14.59L9.41 16L12 13.41L14.59 16L16 14.59L13.41 12L16 9.41L14.59 8ZM12 2C6.47 2 2 6.47 2 12C2 17.53 6.47 22 12 22C17.53 22 22 17.53 22 12C22 6.47 17.53 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
+          fill="#D21919"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_9735_3392">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
     </svg>
   );
 };
